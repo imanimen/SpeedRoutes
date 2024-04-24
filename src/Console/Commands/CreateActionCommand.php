@@ -39,7 +39,7 @@ class CreateActionCommand extends Command
            }
            else
 	   {
-            $stubPath  = '../../Stubs/ActionRoute.stub';
+            $stubPath  = base_path() . '/' . '../../Stubs/ActionRoute.stub';
             $stub      = file_get_contents($stubPath);
             $stub      = str_replace('{{action_name}}', $action, $stub);
 
