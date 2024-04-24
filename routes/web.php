@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{action}', BaseController::class);
-Route::post('/{action}', BaseController::class);
-Route::patch('/{action}', BaseController::class);
-Route::delete('/{action}', BaseController::class);
+Route::get('/{action}', [BaseController::class], 'route');
+Route::post('/{action}', [BaseController::class], 'route');
+Route::patch('/{action}', [BaseController::class], 'route');
+Route::delete('/{action}', [BaseController::class], 'route');
