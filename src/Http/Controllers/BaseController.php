@@ -1,6 +1,6 @@
 <?php
 
-namespace imanimen\SpeedRoutes\Http\Controllers;
+namespace Imanimen\SpeedRoutes\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;

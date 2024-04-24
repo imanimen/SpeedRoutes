@@ -1,6 +1,6 @@
 <?php
 
-namespace imanimen\SpeedRoutes\Console\Commands;
+namespace Imanimen\SpeedRoutes\Console\Commands;
 
 use Exception;
 use Illuminate\Console\Command;
