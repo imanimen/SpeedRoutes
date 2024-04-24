@@ -4,7 +4,7 @@ namespace Imanimen\SpeedRoutes;
 
 use Illuminate\Support\ServiceProvider;
 
-class ActionRouteServiceProvider extends ServiceProvider
+class SpeedRoutesServiceProvider extends ServiceProvider
 {
 	public function boot()
 	{
