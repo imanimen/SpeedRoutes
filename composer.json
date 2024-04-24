@@ -5,12 +5,13 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "imanimen\\SpeedRoutes\\": "src/"
+      "Imanimen\\SpeedRoutes\\": "src/"
     }
   },
   "authors": [
     {
-      "name": "imanimen"
+      "name": "imanimen",
+      "email": "imanimen81@gmail.com"
     }
   ],
   "require": {
@@ -20,7 +21,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "imanimen\\SpeedRoutes\\SpeedRoutesServiceProvider"
+        "Imanimen\\SpeedRoutes\\SpeedRoutesServiceProvider"
       ]
     }
   }
