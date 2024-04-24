@@ -1,11 +1,11 @@
 {
-    "name": "imanimen/speed-routes",
+    "name": "imanimen/SpeedRoutes",
     "description": "This package helps you to boost your coding speed by just creating one file for your, Logic, Method, Validations and Middlewares.",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "imanimen\\speed-routes": "src/"
+            "imanimen\\SpeedRoutes\\": "src/"
         }
     },
     "authors": [
@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
           "providers": [
-            "imanimen\\speed-routes\\src\\Providers\\ActionRouteServiceProvider.php"
+            "imanimen\\SpeedRoutes\\src\\Providers\\ActionRouteServiceProvider.php"
           ]
         }
       }
