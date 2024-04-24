@@ -5,7 +5,7 @@ namespace Imanimen\SpeedRoutes\Abstracts;
 
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Cache;
-use imanimen\SpeedRoutes\Interfaces\ActionRouteInterface;
+use Imanimen\SpeedRoutes\Interfaces\ActionRouteInterface;
 
 abstract class ActionAbstract implements ActionRouteInterface
 {
