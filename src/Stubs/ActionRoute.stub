@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Actions;
+use Imanimen\SpeedRoutes\src\Abstracts\ActionRouteAbstract;
+
+class {{action_name}}Action extends ActionAbstract
+{
+
+    public function render()
+    {
+        return parent::render();
+    }
+
+    public function validation()
+    {
+        return parent::validation();
+    }
+
+    public function method()
+    {
+        return parent::method();
+    }
+}
