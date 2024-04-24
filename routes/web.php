@@ -1,6 +1,6 @@
 <?php
 
-use imanimen\SpeedRoutes;
+use Imanimen\SpeedRoutes\Http\Controllers\BaseController;
 use Illuminate\Support\Facades\Route;
 
 /*
