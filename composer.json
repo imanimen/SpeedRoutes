@@ -24,5 +24,9 @@
         "Imanimen\\SpeedRoutes\\SpeedRoutesServiceProvider"
       ]
     }
-  }
+  },
+  "files": [
+    "src/",
+    "Stubs/ActionRoute.stub"
+]
 }
