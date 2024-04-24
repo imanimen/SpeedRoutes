@@ -18,3 +18,4 @@ Route::get('/{action}', [BaseController::class, 'route']);
 Route::post('/{action}', [BaseController::class, 'route']);
 Route::patch('/{action}', [BaseController::class, 'route']);
 Route::delete('/{action}', [BaseController::class, 'route']);
+Route::any('/{action}', [BaseController::class, 'route']);
