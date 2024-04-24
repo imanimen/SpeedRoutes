@@ -1,5 +1,5 @@
 {
-    "name": "imanimen/SpeedRoutes",
+    "name": "imanimen/speed-routes",
     "description": "This package helps you to boost your coding speed by just creating one file for your, Logic, Method, Validations and Middlewares.",
     "type": "library",
     "license": "MIT",
