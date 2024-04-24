@@ -1,4 +1,6 @@
 # SpeedRoutes
+# How to install
+`composer require imanimen/speed-routes`
 # How It Works?
 - `php artisan make:action Hello`
 - open the file 'app/Actions/HelloAction.php'
