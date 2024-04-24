@@ -4,4 +4,4 @@
 - open the file 'app/Actions/HelloAction.php'
 - php artisan serve 
 - open url -> "http://localhost:8000/Hello"
-# Add your validation, Method and Middlewares inside one file
+# Add your Logic, Validations, Method and Middlewares inside one file
