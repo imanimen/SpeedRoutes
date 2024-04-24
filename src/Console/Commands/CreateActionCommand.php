@@ -48,7 +48,7 @@ class CreateActionCommand extends Command
             $this->info("Action Created. Action Location: ". $write);
            }
         } catch (Exception $e) {
-            $this->error("An Error Occurred");
+            $this->error("An Error Occurred ". $e->getMessage());
         }
     }
 }
