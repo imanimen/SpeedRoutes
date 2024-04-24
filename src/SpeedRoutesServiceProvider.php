@@ -1,6 +1,6 @@
 <?php
 
-namespace imanimen\SpeedRoutes;
+namespace Imanimen\SpeedRoutes;
 
 use Illuminate\Support\ServiceProvider;
 
