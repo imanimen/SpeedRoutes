@@ -17,7 +17,7 @@ abstract class ActionAbstract implements ActionRouteInterface
 
 	protected $should_cache = true; // TODO: for testing. change it later
 	protected $cache_key  = 'cache_key';
-	protected $caceh_ttl  = 60;
+	protected $cache_ttl  = 60;
 
 	public function run()
 	{
@@ -34,9 +34,9 @@ abstract class ActionAbstract implements ActionRouteInterface
 			if (is_null($this->cache_key))
 			{
 				$className = get_class( $this );
-				$className ? $this->setCacheKey(md5($className.'_cache')) : $this->cache_key = 'default_action_cache_'.$this->caceh_ttl;
+				$className ? $this->setCacheKey(md5($className.'_cache')) : $this->cache_key = 'default_action_cache_'.$this->cache_ttl;
 			}
-			return Cache::remember($this->cache_key, $this->caceh_ttl, function () {
+			return Cache::remember($this->cache_key, $this->cache_ttl, function () {
 				return $this->runRender();
 			});
 		}

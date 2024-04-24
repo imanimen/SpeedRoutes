@@ -25,21 +25,23 @@ class BaseController extends Controller
             return $this->responseFacotry([], $validaton->errors(), $this->validationMessages($validaton->errors()), 422);
         }
         $mannerPath = $class->getManner();
-        // dd($mannerPath);
-        if (!class_exists($mannerPath)) 
-        {
-            return $this->responseFacotry([], 'manner not found', [], 404);
-        } 
-        else {
-            $manner = (new $mannerPath());
-            if ($manner->check($request))
+        if ($mannerPath) {
+            if (!class_exists($mannerPath)) 
             {
-                return $this->responseFacotry($class->render());
-            }
+                return $this->responseFacotry([], 'manner not found', [], 404);
+            } 
             else {
-                return $this->responseFacotry([], 'manner error', [], 422);
+                $manner = (new $mannerPath());
+                if ($manner->check($request))
+                {
+                    return $this->responseFacotry($class->render());
+                }
+                else {
+                    return $this->responseFacotry([], 'manner error', [], 422);
+                }
             }
         }
+       
         return $this->responseFacotry($class->render());
     }
 
