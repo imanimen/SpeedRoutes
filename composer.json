@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
           "providers": [
-            "Imanimen\\src\\Providers\\ActionRouteServiceProvider.php"
+            "Imanimen\\SpeedRoutes\\src\\Providers\\ActionRouteServiceProvider.php"
           ]
         }
       }
