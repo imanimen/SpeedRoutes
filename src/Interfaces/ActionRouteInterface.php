@@ -1,6 +1,6 @@
 <?php
 
-namespace imanimen\SpeedRoutes\src\IInterfaces;
+namespace imanimen\SpeedRoutes;
 
 interface ActionRouteInterface
 {

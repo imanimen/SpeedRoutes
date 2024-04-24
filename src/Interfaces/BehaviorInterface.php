@@ -1,6 +1,6 @@
 <?php
 
-namespace imanimen\SpeedRoutes\src\Interfaces;
+namespace imanimen\SpeedRoutes;
 
 interface BehaviorInterface
 {
