@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Actions;
-use Imanimen\SpeedRoutes\src\Abstracts\ActionRouteAbstract;
+use imanimen\SpeedRoutes\src\Abstracts\ActionRouteAbstract;
 
 class {{action_name}}Action extends ActionAbstract
 {
