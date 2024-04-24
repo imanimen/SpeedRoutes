@@ -38,7 +38,7 @@ class BaseController extends Controller
                         return $this->responseFacotry($class->render());
                     }
                     else {
-                        return $this->responseFacotry([], $mannerMain->getError(), [], 422);
+                        return $this->responseFacotry([], $mannerMain->errorMessage(), [], $mannerMain->errorCode());
                     }
                 }
             }
