@@ -1,7 +1,7 @@
 <?php
 
 
-namespace imanimen\SpeedRoutes\src\Abstracts;
+namespace imanimen\SpeedRoutes\Abstracts;
 
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Cache;
