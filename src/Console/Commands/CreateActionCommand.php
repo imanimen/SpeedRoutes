@@ -12,7 +12,7 @@ class CreateActionCommand extends Command
      *
      * @var string
      */
-    protected $signature = "make:action {name} {--method=GET}";
+    protected $signature = "make:action {name} {--method=GET} {--module=}";
 
     /**
      * The console command description.
@@ -31,23 +31,32 @@ class CreateActionCommand extends Command
         try {
             $action = $this->argument('name');
             $method = strtoupper($this->option('method'));
+            $module = $this->option('module');
+
             if (!in_array($method, ['GET', 'POST', 'DELETE', 'PATCH', 'ANY'])) {
                 throw new Exception("Invalid method specified.");
             }
-            
-            $dir = base_path() . '/app/Actions/' . ucfirst($action) . 'Action.php';
-            $actionDir = base_path() . '/app/Actions/';
+
+            $modulePath = '';
+            if (!empty($module)) {
+                $modulePath = ucfirst($module) . '/';
+            }
+
+            $dir = base_path() . '/app/Modules/' . $modulePath . 'Actions/' . ucfirst($action) . 'Action.php';
+            $actionDir = base_path() . '/app/Modules/' . $modulePath . 'Actions/';
+
             if (!is_dir($actionDir)) {
                 mkdir($actionDir, 0755, true);
             }
+
             if (file_exists($dir)) {
                 $this->error('Action Already Exists!');
             } else {
                 $stubPath = __DIR__ . '/../../Stubs/ActionRoute.stub';
                 $stub = file_get_contents($stubPath);
                 $stub = str_replace(['{{action_name}}', '{{method}}'], [$action, $method], $stub);
-                
-                $write = base_path() . '/app/Actions/' . ucfirst($action) . 'Action.php';
+
+                $write = base_path() . '/app/Modules/' . $modulePath . 'Actions/' . ucfirst($action) . 'Action.php';
                 file_put_contents($write, $stub);
                 $this->info("Action Created. Action Location: " . $write);
             }
