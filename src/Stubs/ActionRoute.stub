@@ -19,6 +19,6 @@ class {{action_name}}Action extends ActionAbstract
 
     public function method()
     {
-        return parent::{{method}};
+        return parent::METHOD_{{method}};
     }
 }
