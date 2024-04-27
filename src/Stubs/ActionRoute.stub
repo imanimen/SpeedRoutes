@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Actions;
+
 use Imanimen\SpeedRoutes\Abstracts\ActionAbstract;
 
 class {{action_name}}Action extends ActionAbstract
@@ -18,10 +19,8 @@ class {{action_name}}Action extends ActionAbstract
 
     public function method()
     {
-        return parent::method();
+        return parent::METHOD_{{method}};
     }
 
-    public function getManner() : array {
-        return [];
-    }
 }
+
