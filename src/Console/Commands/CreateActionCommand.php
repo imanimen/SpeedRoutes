@@ -42,8 +42,8 @@ class CreateActionCommand extends Command
                 $modulePath = ucfirst($module) . '/';
             }
 
-            $dir = base_path() . '/app/Modules/' . $modulePath . 'Actions/' . ucfirst($action) . 'Action.php';
-            $actionDir = base_path() . '/app/Modules/' . $modulePath . 'Actions/';
+            $dir = base_path() . '/Modules/' . $modulePath . 'Actions/' . ucfirst($action) . 'Action.php';
+            $actionDir = base_path() . '/Modules/' . $modulePath . 'Actions/';
 
             if (!is_dir($actionDir)) {
                 mkdir($actionDir, 0755, true);
@@ -56,7 +56,7 @@ class CreateActionCommand extends Command
                 $stub = file_get_contents($stubPath);
                 $stub = str_replace(['{{action_name}}', '{{method}}'], [$action, $method], $stub);
 
-                $write = base_path() . '/app/Modules/' . $modulePath . 'Actions/' . ucfirst($action) . 'Action.php';
+                $write = base_path() . '/Modules/' . $modulePath . 'Actions/' . ucfirst($action) . 'Action.php';
                 file_put_contents($write, $stub);
                 $this->info("Action Created. Action Location: " . $write);
             }
