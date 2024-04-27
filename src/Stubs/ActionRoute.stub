@@ -21,4 +21,6 @@ class {{action_name}}Action extends ActionAbstract
     {
         return parent::METHOD_{{method}};
     }
+
 }
+
