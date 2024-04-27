@@ -28,5 +28,6 @@
   "files": [
     "src/",
     "Stubs/ActionRoute.stub"
-]
+  ],
+  "version": "1.0.0"
 }
