@@ -18,6 +18,7 @@ abstract class ActionAbstract implements ActionRouteInterface
 	protected $should_cache = true; // TODO: for testing. change it later
 	protected $cache_key  = 'cache_key';
 	protected $cache_ttl  = 60;
+	protected $whiteHouseEnabled 	  = true;
 
 	public function run()
 	{
