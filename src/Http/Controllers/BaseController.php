@@ -10,44 +10,44 @@ class BaseController extends Controller
     public function route(Request $request, $action)
     {
         $class_action = 'App\\Actions\\'.ucfirst($action).'Action';
-        if (!class_exists( $class_action ))
-        {
+        if (!class_exists($class_action)) {
             return $this->responseFacotry([], 'not found', [], 404);
         }
         $class = (new $class_action());
-        if ($class->method() !== $request->method())
-        {
+        if ($class->method() !== $request->method()) {
             return $this->responseFacotry([], 'invalid method', [], 405);
         }
         $validaton = Validator::make($request->all(), $class->validation());
-        if ($validaton->fails())
-        {
+        if ($validaton->fails()) {
             return $this->responseFacotry([], $validaton->errors(), $this->validationMessages($validaton->errors()), 422);
         }
         $mannerPath = $class->getManner();
         foreach ($mannerPath as $manner) {
             if ($manner) {
-                if (!class_exists($manner)) 
-                {
+                if (!class_exists($manner)) {
                     return $this->responseFacotry([], 'manner not found', [], 404);
-                } 
-                else {
+                } else {
                     $mannerMain = (new $manner());
-                    if ($mannerMain->check($request))
-                    {
-                        return $this->responseFacotry($class->render());
-                    }
-                    else {
+                    if ($mannerMain->check($request)) {
+                        $response = $class->render();
+                        if ($response instanceof \Illuminate\Contracts\View\View) {
+                            return $response;
+                        } else {
+                            return $this->responseFacotry($response);
+                        }
+                    } else {
                         return $this->responseFacotry([], $mannerMain->errorMessage(), [], $mannerMain->errorCode());
                     }
                 }
             }
         }
-        
-       
-        return $this->responseFacotry($class->render());
+        $response = $class->render();
+        if ($response instanceof \Illuminate\Contracts\View\View) {
+            return $response;
+        } else {
+            return $this->responseFacotry($response);
+        }
     }
-
 
     public function validationMessages( $errors )
     {
