@@ -4,6 +4,7 @@ namespace Imanimen\SpeedRoutes;
 
 use Illuminate\Support\ServiceProvider;
 use Imanimen\SpeedRoutes\Console\Commands\CreateActionCommand;
+use Imanimen\SpeedRoutes\Console\Commands\GenerateDocumentationCommand;
 
 class SpeedRoutesServiceProvider extends ServiceProvider
 {
@@ -13,6 +14,7 @@ class SpeedRoutesServiceProvider extends ServiceProvider
         {
             $this->commands( [
                                  CreateActionCommand::class ,
+								 GenerateDocumentationCommand::class
                              ] );
         }
 	}
