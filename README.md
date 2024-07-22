@@ -1,6 +1,6 @@
 # SpeedRoutes
 # Add your Logic, Validations, Method and Middlewares in one class 😎
-# install
+# Install
 `composer require imanimen/speed-routes`
 # Usage
 - `php artisan make:action Hello`
