@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Actions;
+namespace {{namespace}};
 
 use Imanimen\SpeedRoutes\Abstracts\ActionAbstract;
 
 class {{action_name}}Action extends ActionAbstract
 {
-
     public function render()
     {
         return parent::render();
@@ -21,6 +20,4 @@ class {{action_name}}Action extends ActionAbstract
     {
         return parent::METHOD_{{method}};
     }
-
 }
-
