@@ -8,19 +8,20 @@ use Imanimen\SpeedRoutes\Console\Commands\GenerateDocumentationCommand;
 
 class SpeedRoutesServiceProvider extends ServiceProvider
 {
-	public function boot()
+	public function boot(): void
 	{
-		if ( $this->app->runningInConsole() )
-        {
-            $this->commands( [
-                                 CreateActionCommand::class ,
-								 GenerateDocumentationCommand::class
-                             ] );
-        }
+		if ($this->app->runningInConsole()) {
+			$this->commands([
+				CreateActionCommand::class,
+				GenerateDocumentationCommand::class
+			]);
+		}
 	}
 
-	public function register()
+	public function register(): void
 	{
-		$this->loadRoutesFrom(__DIR__ . '../../routes/web.php');
+		$this->mergeConfigFrom(__DIR__ . '/../../config/speed-routes.php', 'speed-routes');
+
+		$this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
 	}
 }
