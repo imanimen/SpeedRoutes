@@ -22,6 +22,6 @@ class SpeedRoutesServiceProvider extends ServiceProvider
 	{
 		$this->mergeConfigFrom(__DIR__ . './../config/speed-routes.php', 'speed-routes');
 
-		$this->loadRoutesFrom(__DIR__ . './../routes/web.php');
+		$this->loadRoutesFrom(__DIR__ . './../routes/web.php')
 	}
 }
